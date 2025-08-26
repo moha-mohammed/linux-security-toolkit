@@ -1,0 +1,18 @@
+```bash
+#!/bin/bash
+# Simple firewall script using ufw
+echo "Setting up firewall rules..."
+
+# Deny all incoming by default
+ufw default deny incoming
+# Allow all outgoing
+ufw default allow outgoing
+
+# Allow SSH, HTTP, HTTPS
+ufw allow 22
+ufw allow 80
+ufw allow 443
+
+ufw enable
+
+echo "✅ Firewall rules applied!"
